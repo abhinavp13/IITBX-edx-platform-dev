@@ -1,0 +1,90 @@
+## mako
+<%! from django.core.urlresolvers import reverse %>
+<%namespace name='static' file='static_content.html'/>
+
+<div class="wrapper wrapper-footer">
+  <footer>
+    <div class="colophon">
+      <nav class="nav-colophon">
+      <ol>
+          <li class="nav-colophon-01">
+          <a id="about" href="${marketing_link('ABOUT')}">
+              About
+          </a>
+          </li>
+        <!-- <li class="nav-colophon-02">
+         <a id="jobs" href="${marketing_link('JOBS')}">
+              Jobs
+          </a>
+          </li>-->
+          <li class="nav-colophon-03">
+          <a id="press" href="${marketing_link('TEAM')}">
+              Team
+          </a>
+          </li>
+          <li class="nav-colophon-04">
+          <a id="faq" href="${marketing_link('FAQ')}">
+              FAQ
+          </a>
+          </li>
+          <li class="nav-colophon-05">
+          <a id="contact" href="${marketing_link('CONTACT')}">
+              Contact
+          </a>
+          </li>
+      </ol>
+      </nav>
+
+      <div class="colophon-about">
+        <img src="${MITX_ROOT_URL}/static/images/header-logo.png" />
+
+        <p>${settings.PLATFORM_NAME} is a non-profit inspired by <a href=http://www.edx.org>edX</a> and other MOOCs around the world. Its mission is to bring the best of higher education to students of all ages anywhere in the world, wherever there is Internet access. ${settings.PLATFORM_NAME}’s free online MOOCs are interactive and subjects include computer science and artificial intelligence.</p>
+      </div>
+    </div>
+
+    <div class="references">
+      <nav class="nav-social">
+        <ul>
+          <li class="nav-social-01">
+            <a href="#" rel="external">
+              <img src="${MITX_ROOT_URL}/static/images/social/ico-social-meetup.png" alt="${settings.PLATFORM_NAME} on Meetup" />
+            </a>
+          </li>
+          <li class="nav-social-02">
+            <a href="#" rel="external">
+              <img src="${MITX_ROOT_URL}/static/images/social/ico-social-facebook.png" alt="${settings.PLATFORM_NAME} on Facebook" />
+            </a>
+          </li>
+          <li class="nav-social-03">
+            <a href="#" rel="external">
+              <img src="${MITX_ROOT_URL}/static/images/social/ico-social-twitter.png" alt="${settings.PLATFORM_NAME} on Twitter" />
+            </a>
+          </li>
+          <li class="nav-social-04">
+            <a href="#" rel="external">
+              <img src="${MITX_ROOT_URL}/static/images/social/ico-social-google.png" alt="${settings.PLATFORM_NAME} on Google+" />
+            </a>
+          </li>
+          <li class="nav-social-05">
+            <a href="#" rel="external">
+              <img src="${MITX_ROOT_URL}/static/images/social/ico-social-youtube.png" alt="${settings.PLATFORM_NAME} on YouTube" />
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <p class="copyright">&copy; 2013 ${settings.PLATFORM_NAME}, some rights reserved.</p>
+
+      <nav class="nav-legal">
+        <ul>
+          <li class="nav-legal-01">
+            <a href="${marketing_link('TOS')}">Terms of Service and Honor Code</a>
+          </li>
+          <li class="nav-legal-02">
+            <a href="${marketing_link('PRIVACY')}">Privacy Policy</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+</div>

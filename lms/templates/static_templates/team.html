@@ -1,0 +1,176 @@
+<%! from django.core.urlresolvers import reverse %>
+<%inherit file="../main.html" />
+
+<%namespace name='static' file='../static_content.html'/>
+
+<%block name="title"><title>Developer's Team</title></%block>
+<style type="text/css">
+/*body {
+	margin: 0;	padding: 0;
+	font: normal 10px Verdana, Arial, Helvetica, sans-serif;
+	line-height: 1.8em;
+	background: #1d1d1d url(bg.jpg) repeat;
+}
+h1 {
+	font-family:Georgia, "Times New Roman", Times, serif;
+	text-align: center;
+	font-weight: normal;
+	font-size: 4em;
+	line-height: 1.2em;
+	margin: 0; padding: 20px 0;
+}*/
+h1 small {
+	display: block;
+	font-size: 0.5em;
+	color: #000;
+}
+img {border: none;}
+
+
+
+
+ul.columns {
+	width: 720px;
+	list-style: none;
+	margin: 0 auto; padding: 0;
+}
+ul.columns li {
+	width: 220px;
+	float: left; display: inline;
+	margin: 10px; padding: 0;
+	position: relative;
+}
+ul.columns li:hover {z-index: 99;}
+
+ul.columns li img {
+	position: relative;
+	filter: alpha(opacity=70);
+	opacity: 0.7;
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+}
+ul.columns li:hover img{
+	z-index: 999;
+	filter: alpha(opacity=100);
+	opacity: 1;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+
+ul.columns li .info {
+	position: absolute;
+	left: -10px; top: -10px;
+	padding: 210px 10px 20px;
+	width: 220px;
+	display: none;
+	background: #E5E4E2;
+	font-size: 1.2em;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+ul.columns li:hover .info {display: block;}
+
+ul.columns li h2 {
+	font-size: 1.2em;
+	font-weight: normal;
+	text-transform: uppercase;
+	margin: 0; padding: 10px 0;
+}
+ul.columns li p {padding: 0; margin: 0; font-size: 0.9em;}
+
+</style>
+<div class="container">
+<ul class="columns">
+    <li>
+                <a href="#"><img src="${MITX_ROOT_URL}/static/team/images/roshan.jpg" width="220px" height="210px" alt="" /></a>
+        <div class="info">
+
+                        <h2><b>Roshan Piyush</b></h2>
+                        <p>(aka Django Man) <br>Loves python(for coding only),likes to try every kind of food.</p>  
+            <p><i>piyush.roshan@gmail.com</i></p> 
+            <p><b>NIT Calicut</b></p>
+                      
+        </div>
+        </li>
+        <li>
+                <a href="#"><img src="${MITX_ROOT_URL}/static/team/images/anushree_jangid.jpg" width="220px" height="210px" alt="" /></a>
+        <div class="info">
+                        <h2>Anushree Jangid</h2>
+                        <p>Work is worship, except on Sundays, a happy go lucky girl, laughs on whatever joke you make(except PJ's). <br></p>
+            <p><i>anushreejangid@gmail.com</i></p>
+            <p><b>BIT Mesra </b></p>
+        </div>
+        </li>
+	<li>
+		<div class='bwWrapper'>
+		<a href="#"><img src="${MITX_ROOT_URL}/static/team/images/kushal.jpg" width="220px" height="210px" alt="" /></a>
+		</div>
+        <div class="info">
+			<h2>Kushal Yarlagadda</h2>
+			 <p>Speaks slowly (bit by bit), but thinks faster than Sheldon.</p>
+            <p><i>whykushal93@gmail.co</i></p> 
+            <p><b>IIT Kanpur</b></p>
+        </div>
+
+	</li>
+	<li>
+
+		<a href="#"><img src="${MITX_ROOT_URL}/static/team/images/abhi.jpg" width="220px" height="210px" alt="" /></a>
+        <div class="info">
+			<h2>Abhilash Kadhane</h2>
+			<p>Laziness is his secret ingredient. But it's only kept a secret from the person with simplicity & hardwork.</p>
+            <p><i>abhilash008omg@gmail.com</i></p>
+            <p><b> VNIT Nagpur</b></p>
+        </div>
+	</li>
+	<li>
+		<a href="#"><img src="${MITX_ROOT_URL}/static/team/images/abhinav.jpg" width="220px" height="210px" alt="" /></a>
+        <div class="info">
+
+			<h2>Abhinav Puri</h2>
+			<p> Describes himself to be most sincere. Punjab da Puttar, Paratha guy(with melting butter), Humorous Teddy Bear  are some of his common names.</p>
+            <p><i>pabhinav@iitrpr.ac.in</i></p> 
+            <p><b>IIT Ropar</b></p>
+        </div>
+	</li>
+	<li>
+		<a href="#"><img src="${MITX_ROOT_URL}/static/team/images/photo.png" width="220px" height="210px" alt="" /></a>
+
+        <div class="info">
+			<h2>Mundru Mahendra</h2>
+			<p>Loves coding, passionate to learn new activities, also, laughs on hindi jokes, though he doesn't understand Hindi.</p>
+            <p><i>mahendra.mundru.cse@<br>gmail.com</i></p> 
+            <p><b> RGU IIIT-RKVALLEY</b></p>
+        </div>
+	</li>
+	<li>
+		<a href="#"><img src="${MITX_ROOT_URL}/static/team/images/dhruva.jpg" width="220px" height="210px" alt="" /></a>
+        <div class="info">
+			<h2>Dhruva Bhaswar</h2>
+			 <p>Likes problem solving, and when his hands are not in coding,his hands does the work of combing his hair.</p>
+
+            <p><i>dhruvabhaswar@gmail.com</i></p> 
+            <p><b>BITS Mesra</b></p>
+        </div>
+	</li>
+	
+	
+	
+	<li>
+		<a href="#"><img src="${MITX_ROOT_URL}/static/team/images/divya.jpg" width="220px" height="210px" alt="" /></a>
+        <div class="info">
+			<h2>Divya Pitta</h2>
+			<p>Likes alogrithm and plays badminton in free time. Do not like ruby or rake commands, got her laptop Raked !!!</p>
+			<p><i>pittadivya@iitj.ac.in</i></p>
+            <p><b>IIT Jodhpur</b></p>
+        </div>
+	</li>
+	<li>
+		<a href="#"><img src="${MITX_ROOT_URL}/static/team/images/tea.jpg" width="220px" height="210px" alt="" /></a>
+        <div class="info">
+			<h2>Tea Breaks</h2>
+			<p>Special Thanks to the brother sister duo who brought Tea and biscuits to awake our sleepy brains at the right time.</p><br>
+			<p><b>IIT Powai</b></p>
+        </div>
+	</li>
+</ul>
+</div>

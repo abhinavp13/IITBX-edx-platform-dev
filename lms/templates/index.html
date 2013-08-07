@@ -1,0 +1,249 @@
+<%! from django.core.urlresolvers import reverse %>
+<%! from time import strftime %>
+<%inherit file="main.html" />
+<%namespace name='static' file='static_content.html'/>
+
+<section class="home">
+  <header>
+    <div class="outer-wrapper">
+      <div class="title">
+        <hgroup>
+          % if self.stanford_theme_enabled():
+            <h1>Free courses from <strong>Stanford</strong></h1>
+          % else:
+            <h1>Welcome to ${settings.PLATFORM_NAME}</h1>
+          % endif
+          <h2>Knowledge is supreme goal</h2>
+        </hgroup>
+
+        ## Disable social buttons for non-${settings.PLATFORM_NAME} sites
+        % if not self.theme_enabled():
+          <section class="actions">
+            <div class="main-cta">
+              <a href="#signup-modal" id="signup_action" class="find-courses" rel="leanModal">Sign Up</a>
+            </div>
+
+            <div class="secondary-actions">
+              <div class="social-sharing">
+                <div class="sharing-message">Stay up to date with all ${settings.PLATFORM_NAME} has to offer!</div>
+                <a href="https://twitter.com/edXOnline" class="share">
+                  <img src="${static.url('images/social/twitter-sharing.png')}">
+                </a>
+                <a href="http://www.facebook.com/EdxOnline" class="share">
+                  <img src="${static.url('images/social/facebook-sharing.png')}">
+                </a>
+                <a href="https://plus.google.com/108235383044095082735/posts" class="share">
+                  <img src="${static.url('images/social/google-plus-sharing.png')}">
+                </a>
+              </div>
+            </div>
+          </section>
+        % endif
+      </div>
+
+        <a href="#video-modal" class="media" rel="leanModal">
+          <div class="hero">
+            <div class="play-intro"></div>
+          </div>
+        </a>
+
+    </div>
+  </header>
+
+  <section class="container">
+    <section class="highlighted-courses">
+      ## Disable university partner logos and sites for non-${settings.PLATFORM_NAME} sites
+      % if not self.theme_enabled():
+        ##<h2>Explore free courses from <span class="edx">${settings.PLATFORM_NAME}</span> universities</h2>
+        <h2>Explore free courses from <span class="edx">${settings.PLATFORM_NAME}</span> universities</h2><!--changed-->
+        <section class="university-partners university-partners2x6">
+          <ol class="partners">
+             <li class="partner">
+              <a href="${reverse('university_profile', args=['nptel'])}">
+                <img src="${static.url('images/university/nptel/nptel.jpg')}" />
+                <div class="name">
+                  <span>NPTEL</span>
+                </div>
+              </a>
+            </li>
+            <li class="partner">
+              <a href="${reverse('university_profile', args=['nptel'])}">
+                <img src="${static.url('images/university/nptel/nptel.jpg')}" />
+                <div class="name">
+                  <span>NPTEL</span>
+                </div>
+              </a>
+            </li>
+            <li class="partner">
+              <a href="${reverse('university_profile', args=['nptel'])}">
+                <img src="${static.url('images/university/nptel/nptel.jpg')}" />
+                <div class="name">
+                  <span>NPTEL</span>
+                </div>
+              </a>
+            </li>
+             <li class="partner">
+              <a href="${reverse('university_profile', args=['nptel'])}">
+                <img src="${static.url('images/university/nptel/nptel.jpg')}" />
+                <div class="name">
+                  <span>NPTEL</span>
+                </div>
+              </a>
+            </li>
+             <li class="partner">
+              <a href="${reverse('university_profile', args=['nptel'])}">
+                <img src="${static.url('images/university/nptel/nptel.jpg')}" />
+                <div class="name">
+                  <span>NPTEL</span>
+                </div>
+              </a>
+            </li>
+            <li class="partner">
+              <a href="${reverse('university_profile', args=['nptel'])}">
+                <img src="${static.url('images/university/nptel/nptel.jpg')}" />
+                <div class="name">
+                  <span>NPTEL</span>
+                </div>
+              </a>
+            </li>
+          </ol>
+
+          <hr />
+
+          <ol class="partners">
+            <li class="partner">
+              <a href="${reverse('university_profile', args=['nptel'])}">
+                <img src="${static.url('images/university/nptel/nptel.jpg')}" />
+                <div class="name">
+                  <span>NPTEL</span>
+                </div>
+              </a>
+            </li>
+            <li class="partner">
+              <a href="${reverse('university_profile', args=['nptel'])}">
+                <img src="${static.url('images/university/nptel/nptel.jpg')}" />
+                <div class="name">
+                  <span>NPTEL</span>
+                </div>
+              </a>
+            </li>
+           <li class="partner">
+              <a href="${reverse('university_profile', args=['nptel'])}">
+                <img src="${static.url('images/university/nptel/nptel.jpg')}" />
+                <div class="name">
+                  <span>NPTEL</span>
+                </div>
+              </a>
+            </li>
+            <li class="partner">
+              <a href="${reverse('university_profile', args=['nptel'])}">
+                <img src="${static.url('images/university/nptel/nptel.jpg')}" />
+                <div class="name">
+                  <span>NPTEL</span>
+                </div>
+              </a>
+            </li>
+            <li class="partner">
+              <a href="${reverse('university_profile', args=['nptel'])}">
+                <img src="${static.url('images/university/nptel/nptel.jpg')}" />
+                <div class="name">
+                  <span>NPTEL</span>
+                </div>
+              </a>
+            </li>
+            <li class="partner">
+              <a href="${reverse('university_profile', args=['nptel'])}">
+                <img src="${static.url('images/university/nptel/nptel.jpg')}" />
+                <div class="name">
+                  <span>NPTEL</span>
+                </div>
+              </a>
+            </li>
+          </ol>
+        </section>
+      % endif
+
+      <section class="courses">
+          <ul class="courses-listing">
+          %for course in courses:
+            <li class="courses-listing-item">
+              <%include file="course.html" args="course=course" />
+            </li>
+          %endfor
+          </ul>
+      </section>
+    </section>
+  </section>
+
+  ## Disable press and marketing for non-${settings.PLATFORM_NAME} sites
+##  % if not self.theme_enabled():
+    % if self.theme_enabled():##changed
+    <section class="container">
+      <section class="more-info">
+        <header>
+          <h2><span class="edx">edX</span> News &amp; Announcements</h2>
+          <a class="action action-mediakit" href="${reverse('media-kit')}"> <span class="org-name">${settings.PLATFORM_NAME}</span> MEDIA KIT</a>
+        </header>
+        <section class="news">
+          <section class="blog-posts">
+              %for entry in news:
+              <article>
+                  %if entry.image:
+                      <a href="${entry.link}" class="post-graphics" target="_blank"><img src="${entry.image}" /></a>
+                  %endif
+                  <div class="post-name">
+                      <a href="${entry.link}" target="_blank">${entry.title}</a>
+                      %if entry.summary:
+                          <p>${entry.summary}</p>
+                      %endif
+                      <p class="post-date">${strftime("%m/%d/%y", entry.published_parsed)}</p>
+                  </div>
+              </article>
+              %endfor
+          </section>
+          <!--<section class="press-links">
+            <h3>${settings.PLATFORM_NAME} in the News:</h3>
+            <a target="_blank" href="http://www.nytimes.com/2013/04/30/education/adapting-to-blended-courses-and-finding-early-benefits.html?ref=education">The New York Times</a>,
+            <a target="_blank" href="http://online.wsj.com/article/SB10001424127887323741004578414861572832182.html?mod=googlenews_wsj">The Wall Street Journal</a>,
+            <a target="_blank" href="http://www.washingtonpost.com/local/education/stanford-to-help-build-edx-mooc-platform/2013/04/02/5b53bb3e-9bbe-11e2-9a79-eb5280c81c63_story.html">The Washington Post</a>,
+            <a target="_blank" href="http://www.cbsnews.com/video/watch/?id=50143164n">CBS Television</a>,
+            <a target="_blank" href="http://bostonglobe.com/2012/12/04/edx/AqnQ808q4IEcaUa8KuZuBO/story.html">The Boston Globe</a>
+            <a href="${reverse('press')}" class="read-more">Read More &rarr;</a>
+          </section>-->
+        </section>
+      </section>
+    </section>
+  % endif
+
+</section>
+
+<section id="video-modal" class="modal home-page-video-modal video-modal">
+  <div class="inner-wrapper">
+    <%
+      if self.stanford_theme_enabled():
+        youtube_video_id = "2gmreZObCY4"
+      else:
+        youtube_video_id = "3e5YJ7m6yW8" #changed
+    %>
+    <iframe width="640" height="360" src="http://www.youtube.com/embed/${youtube_video_id}?showinfo=0" frameborder="0" allowfullscreen></iframe>
+  </div>
+</section>
+
+
+<%block name="js_extra">
+   <script type="text/javascript"">
+      $(window).load(function() {
+         if(getParameterByName('next')) {
+              $('#login').trigger("click");
+         }
+      })
+   </script>
+</%block>
+
+% if show_signup_immediately is not UNDEFINED:
+  ## NOTE: This won't work in production, because anonymous views are cached, so it will
+  ## show either with or without this extra js for 3 minutes at a time.
+<script type="text/javascript">
+  $(window).load(function() {$('#signup_action').trigger("click");});
+</script>
+% endif
